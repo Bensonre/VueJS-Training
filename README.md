@@ -17,7 +17,7 @@ If you don't have it installed, install the LTS version from the Node.js website
 
 ## What Vue.js is
 simply put it is a progressive framework for building user interfaces. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects.  Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.
-## USEFUll Viedeos
+## Useful Videos
  I recommend follow the quick video series Vue.js put introducing it found here. 
   https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/ 
   This is a seris featuring 10 free video lessons all ranging from 1-10 minutes in length, with subtitles avliable if you dont have any headphones. 
