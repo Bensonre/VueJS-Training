@@ -21,3 +21,7 @@ simply put it is a progressive framework for building user interfaces. The core 
  I recommend follow the quick video series Vue.js put introducing it found here. 
   https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/ 
   This is a seris featuring 10 free video lessons all ranging from 1-10 minutes in length, with subtitles avliable if you dont have any headphones. 
+
+## Deliverables
+ A crud Aplication using DotNet Core that has a procucts that has a brand catagory and a stock, and reviews. Similar to The page produced from the videos above. However this one must have a buton for the user to create a new listing, delete a listing, or edit a listing. 
+ Follow the steps in the Wiki to get started.(****not complete****)
