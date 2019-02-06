@@ -26,11 +26,15 @@ https://www.youtube.com/watch?v=4IgC2Q5-yDE&t=0s&list=PL6n9fhu94yhVkdrusLaQsfERm
 
 ## Deliverables
  A crud Aplication using DotNet Core and Vue. The Apllication should be Should contain a list of foods that gives a short description of the food, the calory count and how taty the food is. 
- Vue:
+
+
+Vue:
  *Use the vue CLI
  * The page will update which foods details to display using Vue to dynamically update the page using V-on mouseover.
  * You will use Vif and Velse to determine weather to display the calory count or a form for the user to add the calory count.
  * You will implement a nested reviews component for users to see and add or edit reviews for each food.
  * Each compont should be a single page compontent
- NetCore:
+
+
+NetCore:
  * will use simple .netCore to set up a database for storing foods and the reviews for each food.
