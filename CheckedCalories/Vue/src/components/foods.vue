@@ -1,5 +1,5 @@
 <template>
-  <div class="foods">
+  <div class="foods" >
     <img src="../assets/pie.gif" :alt="imgDes"> <!-- seems to no work with v-binding source have to check to see how images are being served-->
     <div class="food-nav">
     <h1 v-for="(food, index) in Food"
@@ -33,17 +33,22 @@
         </div>
       </div>
     </div>
+    <div class="review-section">
     <div>
-    <h2>Make a review</h2>
-    <review-form></review-form>
-    <h2> Reviews </h2>
-    <reviews-list></reviews-list>
+    <h2 class="tab-select">Make a Review</h2>
+    <review-form @review-submitted="updateReviews"></review-form>
+    </div>
+    <div>
+    <h2 class="tab-select"> Reviews </h2>
+    <review-list :reveiws="currFood.reviews"></review-list>
+    </div>
     </div>
   </div>
 </template>
 
 <script>
   import Reviews from './Reviews.vue'
+  import ReviewsList from './ReviewsList.vue';
 export default {
   name: 'foods',
   data () {
@@ -57,7 +62,13 @@ export default {
           des: 'A Pie',
           CalCount: 600,
           taste: 'Beyond',
-          reviews: []
+          reviews: [
+            { 
+             name: "Reese",
+             review:"love",
+             rating:"5"
+            }
+          ]
         },
         {
           type: 'Sushi',
@@ -66,7 +77,14 @@ export default {
           des: 'Sushi',
           CalCount: 340,
           taste: 'Best',
-          reviews: []
+          reviews: [
+            {
+             name: null,
+             review:null,
+             rating:null
+            }
+
+          ]
         },
         {
           type: 'Burger',
@@ -75,7 +93,13 @@ export default {
           des: 'One juicy Burger Boi',
           CalCount: 750,
           taste: 'Delicious',
-          reviews: []
+          reviews: [
+            {
+             name: null,
+             review:null,
+             rating:null
+            }
+          ]
         },
         {
           type: 'Day Old Oatmeal',
@@ -84,9 +108,15 @@ export default {
           des: 'Woulda been good yesterday',
           CalCount: 0,
           taste: 'meh',
-          reviews: []
+          reviews: [
+            {
+             name: null,
+             review:null,
+             rating:null
+            }
+          ]
         },
-        ],
+        ]
     }
     },
     computed: {
@@ -98,17 +128,21 @@ export default {
       },
       currFood() {
         return this.Food[this.selectedFood]
-      }
+      },
 
     },
     methods: {
       updateProduct: function (index) {
         this.selectedFood = index
         console.log(index)
+      },
+      updateReviews(productReview){
+            this.Food[this.selectedFood].reviews.push(productReview)
       }
     },
     components: {
-      "review-form":Reviews
+      "review-form":Reviews,
+      "review-list":ReviewsList
     }
 }
 </script>
@@ -141,5 +175,19 @@ li {
 
 a {
   color: #35495E;
+}
+.review-section{
+  margin-top: 50px;
+  text-align: start;
+  display: flex;
+  justify-content: center;
+}
+.tab-select{
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: antiquewhite;
+  text-align: center;
+  margin: 10px;
+  padding: 3px;
 }
 </style>

@@ -55,6 +55,7 @@
                 review: this.review,
                 rating: this.rating
               }
+                this.$emit('review-submitted', productReview)
                 this.name=null
                 this.review= null
                 this.rating= null
@@ -68,3 +69,10 @@
     }
   }
 </script>
+<style>
+p{
+  width: 200px;
+  padding: 5px;
+}
+</style>
+
