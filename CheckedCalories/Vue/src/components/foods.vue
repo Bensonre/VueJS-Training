@@ -1,5 +1,5 @@
 <template>
-  <div class="foods" >
+  <div class="foods">
     <img src="../assets/pie.gif" :alt="imgDes"> <!-- seems to no work with v-binding source have to check to see how images are being served-->
     <div class="food-nav">
     <h1 v-for="(food, index) in Food"
@@ -17,30 +17,29 @@
             <span class="section-title"><em>Description:</em>{{currFood.des}}</span>
           </div>
           <div>
-          <span v-if="currFood.CalCount"><em>calories:</em>{{currFood.CalCount}}</span>
+          <span v-if="currFood.CalCount"><em>Calories:</em>{{currFood.CalCount}}</span>
           <form v-else>
             <p>
-              <em>Calories not found!</em>
+              <div class= "warn"><em>Calories not found!</em></div>
               <label for="Calories">Input Calories:</label>
               <input id="Calories" v-model.number.lazy="currFood.CalCount" placeholder="0">
             </p>
           </form>
+          </div>
           <div>
           <span><em>Taste: </em>{{currFood.taste}}</span>
           </div>
-          </div>
-
         </div>
       </div>
     </div>
     <div class="review-section">
     <div>
     <h2 class="tab-select">Make a Review</h2>
-    <review-form @review-submitted="updateReviews"></review-form>
+    <review-form @review-submitted="updateReview"></review-form>
     </div>
     <div>
     <h2 class="tab-select"> Reviews </h2>
-    <review-list :reveiws="currFood.reviews"></review-list>
+    <review-list :Food="currReveiws"></review-list>
     </div>
     </div>
   </div>
@@ -62,13 +61,7 @@ export default {
           des: 'A Pie',
           CalCount: 600,
           taste: 'Beyond',
-          reviews: [
-            { 
-             name: "Reese",
-             review:"love",
-             rating:"5"
-            }
-          ]
+          reviews: []
         },
         {
           type: 'Sushi',
@@ -77,14 +70,7 @@ export default {
           des: 'Sushi',
           CalCount: 340,
           taste: 'Best',
-          reviews: [
-            {
-             name: null,
-             review:null,
-             rating:null
-            }
-
-          ]
+          reviews: []
         },
         {
           type: 'Burger',
@@ -93,13 +79,7 @@ export default {
           des: 'One juicy Burger Boi',
           CalCount: 750,
           taste: 'Delicious',
-          reviews: [
-            {
-             name: null,
-             review:null,
-             rating:null
-            }
-          ]
+          reviews: []
         },
         {
           type: 'Day Old Oatmeal',
@@ -108,15 +88,10 @@ export default {
           des: 'Woulda been good yesterday',
           CalCount: 0,
           taste: 'meh',
-          reviews: [
-            {
-             name: null,
-             review:null,
-             rating:null
-            }
-          ]
+          reviews: []
         },
         ]
+
     }
     },
     computed: {
@@ -129,6 +104,9 @@ export default {
       currFood() {
         return this.Food[this.selectedFood]
       },
+      currReveiws(){
+       return this.Food[this.selectedFood].reviews
+      }
 
     },
     methods: {
@@ -136,9 +114,11 @@ export default {
         this.selectedFood = index
         console.log(index)
       },
-      updateReviews(productReview){
-            this.Food[this.selectedFood].reviews.push(productReview)
-      }
+      updateReview: function (productReview) {
+             this.Food[this.selectedFood].reviews.push(productReview)
+             console.log("review submitted")
+             console.log("review submitted")
+       }
     },
     components: {
       "review-form":Reviews,
@@ -153,6 +133,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .warn{
+    color:rgb(170, 48, 48);
   }
 h1 {
   font-weight: normal;
