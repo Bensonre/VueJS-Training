@@ -39,7 +39,7 @@
     </div>
     <div>
     <h2 class="tab-select"> Reviews </h2>
-    <review-list :Food="currReveiws"></review-list>
+    <review-list @deleteThis="deleteThis" :Food="currReveiws"></review-list>
     </div>
     </div>
   </div>
@@ -48,6 +48,7 @@
 <script>
   import Reviews from './Reviews.vue'
   import ReviewsList from './ReviewsList.vue';
+  import api from '../Api.js'
 export default {
   name: 'foods',
   data () {
@@ -109,21 +110,38 @@ export default {
       }
 
     },
+      async created() {
+      this.getAll()
+      },
+
     methods: {
       updateProduct: function (index) {
         this.selectedFood = index
         console.log(index)
       },
-      updateReview: function (productReview) {
+      updateReview: async function (productReview) {
              this.Food[this.selectedFood].reviews.push(productReview)
-             console.log("review submitted")
-             console.log("review submitted")
+             let ID= parseInt(this.currFood.ID.toString() + this.currFood.reviews.length.toString())
+             await api.create(this.currFood.ID, ID, productReview)
+       },
+      async deleteThis(index){
+            let ID= parseInt(this.currFood.ID.toString() + (index+1).toString())
+            this.currFood.reviews.splice(index,1);
+            await api.delete(ID);
+       },
+       getAll: async function (){
+         const reviews = await api.getAll();
+         let i=0
+        for (i=0; i<this.Food.length; i++){
+          const FoodID= this.Food[i].ID;
+           this.Food[i].reviews= reviews.filter( review => review.foodId == this.Food[i].ID); 
+         };
        }
     },
     components: {
       "review-form":Reviews,
       "review-list":ReviewsList
-    }
+    },
 }
 </script>
 

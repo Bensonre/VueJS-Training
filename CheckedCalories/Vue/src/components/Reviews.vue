@@ -14,8 +14,8 @@
       </p>
 
       <p>
-        <label for="review">Review:</label>
-        <textarea id="review" v-model="review"></textarea>
+        <label for="text">Review:</label>
+        <textarea id="text" v-model="text"></textarea>
       </p>
 
       <p>
@@ -42,27 +42,27 @@
     data(){
       return{
         name: null,
-        review:null,
+        text:null,
         rating:null,
         errors: []
       }
     },
     methods: {
         onSubmit(){
-            if (this.name && this.review && this.rating){
+            if (this.name && this.text && this.rating){
               let productReview = {
                 name: this.name,
-                review: this.review,
+                text: this.text,
                 rating: this.rating
-              }
+                }
                 this.$emit('review-submitted', productReview)
                 this.name=null
-                this.review= null
+                this.text= null
                 this.rating= null
             }
             else{
                 if (!this.name) this.errors.push("Name required.")
-                if (!this.review) this.errors.push("Review required.")
+                if (!this.text) this.errors.push("Review required.")
                 if (!this.rating) this.errors.push("Rating required.")
             }
         }
