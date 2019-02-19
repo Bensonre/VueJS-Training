@@ -18,13 +18,23 @@ Other Resources used to complete this training include
 ## What Vue.js is
 simply put it is a progressive framework for building user interfaces. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects.  Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.
 ## Useful Videos
- I recommend follow the quick video series Vue.js put introducing it found here. 
-  https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/ 
-  This is a seris featuring 10 free video lessons all ranging from 1-10 minutes in length, with subtitles avliable if you dont have any headphones. 
+ ### Vue
+I recommend follow the quick video series Vue.js put introducing it found here. 
+
+https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/ 
+
+This is a seris featuring 10 free video lessons all ranging from 1-10 minutes in length, with subtitles avliable if you dont have any 
+
+headphones, or there is a text version under each of the videos.
+  ### DOTNET  
 A good refresher series on Dotnet Core for those who haven't used it in a while
+
 https://www.youtube.com/watch?v=4IgC2Q5-yDE&t=0s&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=2
+
 or 
+
 for a more API specific video
+
 https://youtu.be/aIkpVzqLuhA
 
 ## Deliverables
