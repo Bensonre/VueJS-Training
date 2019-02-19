@@ -7,7 +7,7 @@ https://docs.microsoft.com/en-us/visualstudio/javascript/create-application-with
 Other Resources used to complete this training include
  VueMastery.com
  Vuejs.org
- An a blog article from OTKA
+ and an a blog article from OTKA
  https://developer.okta.com/blog/2018/08/27/build-crud-app-vuejs-netcore
 
 ## Requirements:
