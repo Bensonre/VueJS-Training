@@ -23,9 +23,12 @@ simply put it is a progressive framework for building user interfaces. The core 
   This is a seris featuring 10 free video lessons all ranging from 1-10 minutes in length, with subtitles avliable if you dont have any headphones. 
 A good refresher series on Dotnet Core for those who haven't used it in a while
 https://www.youtube.com/watch?v=4IgC2Q5-yDE&t=0s&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=2
+or 
+for a more API specific video
+https://youtu.be/aIkpVzqLuhA
 
 ## Deliverables
- A crud Aplication using DotNet Core and Vue. The Apllication should be Should contain a list of foods that gives a short description of the food, the calory count and how taty the food is. 
+ A crud Aplication using DotNet Core and Vue. The Apllication should be Should contain a list of foods that gives a short description of the food, the calory count and how tasty the food is. 
 
 
 Vue:
@@ -37,4 +40,4 @@ Vue:
 
 
 NetCore:
- * will use simple .netCore to set up a database for storing foods and the reviews for each food.
+ * will use simple .netCore to set up a database for storing the reviews for each food.
