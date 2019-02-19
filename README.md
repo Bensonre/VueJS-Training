@@ -1,14 +1,15 @@
 # VueJS-Training
 A Training program for Vue.JS for OSU Cass Employees using Visual studio 2017. Inorder to complete this Training you must be filmilar with working in JavaScript, HTML and CSS. 
 
-This Training is based off of Create a Vue.js application using Node.js Tools for Visual Studio tutrial found here
-https://docs.microsoft.com/en-us/visualstudio/javascript/create-application-with-vuejs?view=vs-2017
 
-Other Resources used to complete this training include
- VueMastery.com
- Vuejs.org
- and an a blog article from OTKA
+Resources used to complete this training include
+ _VueMastery.com_
+ _Vuejs.org_
+ and an a blog article from _OTKA_
  https://developer.okta.com/blog/2018/08/27/build-crud-app-vuejs-netcore
+ 
+ As well as Create a Vue.js application using Node.js Tools for Visual Studio tutrial
+https://docs.microsoft.com/en-us/visualstudio/javascript/create-application-with-vuejs?view=vs-2017
 
 ## Requirements:
 - You must have Visual Studio 2017 version 15.8 Preview 3 or later installed and the Node.js development workload.
